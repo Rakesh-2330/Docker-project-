@@ -7,7 +7,7 @@ RUN rm -rf /usr/share/nginx/html/index.html
 
 ADD  https://github.com/Rakesh-2330/Expense-projest-shell/blob/main/readme.html /usr/share/nginx/html/index.html
 
-RUN chmod x+
+RUN chmod 777
 
 
 
