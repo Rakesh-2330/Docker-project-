@@ -1,3 +1,5 @@
 FROM ubuntu
-CMD ["google.com"]
+RUN useradd expense
+RUN dnf install nginx -y
+CMD ["nginx" , "-g" ,"daemon off;"]
 ENTRYPOINT ["ping"]
