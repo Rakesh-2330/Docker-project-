@@ -1,0 +1,30 @@
+version: "3"
+network: 
+  expence:
+volumes:
+  mysql:  # docker create the volume 
+services:
+  mysql:
+      image: joindevops/mysql:v1
+      container_name: mysql # this is the name of the contatiner
+      volume:
+      - mysql:/etc/lib/mysql # -v mysql:/var/lib/mysql
+  backend:
+    image: joindevops/backend:v1
+    container_name: backend
+    depends_on:
+      - mysql
+  frontend:
+    image: joindevops/frontend:v1
+    contatiner_name: frontend 
+    ports:
+    - 80:80
+    depends_on:
+      - backend
+
+
+
+
+  
+
+
